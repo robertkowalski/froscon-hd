@@ -1,0 +1,40 @@
+.green {
+    color: green;
+}
+
+.red {
+    color: red;
+}
+
+.bg {
+    background-color: #ffffff;
+}
+
+.logo {
+    background-image: url(../images/logo.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100px;
+}
+
+.headerlogoheight {
+    height: 150px; 
+}
+
+.truncateCSS3 {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.italic {
+    font-style: italic;
+}
+
+.enyo-header-inner {
+    padding: 12px 0px 12px 0px;
+}
+
+.normal_enyo-header-inner {
+    padding: 0px 13px 0px 13px;
+}

@@ -1,0 +1,12 @@
+{
+    "id": "gd.kowalski.froscon-hd",
+    "version": "1.0.0",
+    "vendor": "R. Kowalski",
+    "type": "web",
+    "main": "index.html",
+    "title": "Froscon 2011 HD",
+    "icon": "48x48.png",
+    "uiRevision":2,
+    "keywords": ["Froscon", "Timetable", "Conference"],
+    "splashicon": "splashIcon.png"
+}
