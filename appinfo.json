@@ -5,7 +5,7 @@
     "type": "web",
     "main": "index.html",
     "title": "Froscon 2011 HD",
-    "icon": "48x48.png",
+    "icon": "55x55.png",
     "uiRevision":2,
     "keywords": ["Froscon", "Timetable", "Conference"],
     "splashicon": "splashIcon.png"
