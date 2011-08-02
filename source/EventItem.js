@@ -29,7 +29,6 @@ IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY O
 enyo.kind({
     name: "EventItem",
     kind: "HFlexBox",
-    flex: 1,
     style: "width:320px;",
     events: {
         onEntryClick: "",

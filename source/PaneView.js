@@ -33,7 +33,6 @@ enyo.kind({
     published: {
         headerContent: ""
     },
-    flex:1,
     components: [
         {kind: "VFlexBox", flex:1, components: [
             {name: "header", kind: "Header", components: [
