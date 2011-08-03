@@ -1,4 +1,4 @@
-# "Froscon 2011 HD"
+# "FrOSCon 2011 HD"
 
 **Copyright (c) 2011, R. Kowalski**
 
