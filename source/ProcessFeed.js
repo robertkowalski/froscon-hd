@@ -48,21 +48,18 @@ enyo.kind({
     calculateStartEnding: function (minutes) {
         var minutes = Number(minutes);
         if (minutes <= 240) {
+            
             return minutes + 1440
         } else {
+            
             return minutes
         }
     },
-    minutesToHours: function (minutes) {
-        var minutes = Number(minutes);
-        var hours = minutes / 60;
-        console.log(hours);
-    },
     calculateEndHuman: function (startTime, duration, date) {
         var startTime = startTime.split(':');
-        //2011-08-13
-        var dayDate = date.split('-');
-        //new Date(jahr, monat-1, tag, stunde, minute
+
+        var dayDate = date.split('-'); //2011-08-13
+
         var dateObj = new Date(Number(dayDate[0]), Number(dayDate[1]) - 1, Number(dayDate[2]), Number(startTime[0]), Number(startTime[1]));
         var timeStamp = Number(dateObj.getTime());
 
@@ -78,11 +75,10 @@ enyo.kind({
         } else {
             resultminutes = resultObj.getMinutes();
         }
+        
         return resultObj.getHours() + ":" + resultminutes
     },
-
     dataChanged: function() {
-
         for (var day = 0; day < this.data.schedule.day.length; day++) {
             var date = this.data.schedule.day[day].date;
             for (var room = 0; room < this.data.schedule.day[day].room.length; room++) {
@@ -100,11 +96,9 @@ enyo.kind({
                             this.data.schedule.day[day].room[room][e][i].endMinutes = this.data.schedule.day[day].room[room].event[i].startMinutes + this.data.schedule.day[day].room[room].event[i].durationMinutes;
                             this.data.schedule.day[day].room[room][e][i].end = this.calculateEndHuman(this.data.schedule.day[day].room[room].event[i].start, this.data.schedule.day[day].room[room].event[i].durationMinutes, date);
                             this.data.schedule.day[day].room[room][e][i].empty = false;
-
                         }
                     }
                 }
-
                 if ("undefined" == typeof(this.data.schedule.day[day].room[room].event)) {
                     this.data.schedule.day[day].room[room].event = [];
                     this.data.schedule.day[day].room[room].event[0] = {};

@@ -95,6 +95,7 @@ enyo.kind({
         this.getNetworkStatus();
 
         this.dayData = [];
+        this.day = 0;
     },
     rendered: function() {
         this.inherited(arguments);
@@ -178,7 +179,7 @@ enyo.kind({
             this.$.rooms.createComponent({flex: 1, style:"width:320px; float:left;",
                 name: "dayList" + i, owner: this, kind: "VirtualRepeater", onSetupRow: "listSetupRow",
                 className: "list", components: [
-                    {owner:this, name: "EventItem" + i, kind: "EventItem",
+                    {owner: this, name: "EventItem" + i, kind: "EventItem",
                         className: "item", popup: "eventInfoPopup", day: 0, room: i,
                         onEntryClick: "showPopup", components: [
                     ]}
@@ -199,6 +200,7 @@ enyo.kind({
     },
     buttonItemClick: function(inSender) {
         this.humanDay = inSender.day + 1;
+        this.day = inSender.day;
 
         for (var i = 0; i < this.buttonNames.length; i++) {
             if (inSender.name != this.buttonNames[i]) {
@@ -215,7 +217,6 @@ enyo.kind({
 
             html += "<div style='width: 320px; text-align:center; float: left;'>" + this.data.schedule.day[inSender.day].room[i].name + "</div>";
 
-
             this.room = i;
             this.dayData = this.data.schedule.day[inSender.day].room[i].event;
             this.$["dayList" + i].render();
@@ -228,7 +229,7 @@ enyo.kind({
         this.$.slidingPane.back(e);
     },
     listSetupRow: function(inSender, inIndex) {
-        //console.log(inSender.name)
+
         try {
             var record = this.dayData[inIndex];
         } catch(e) {
@@ -237,6 +238,8 @@ enyo.kind({
 
         if (record) {
             this.$['EventItem' + this.room].setEntry(record);
+            this.$['EventItem' + this.room].day = this.day;
+            
             return true;
         }
     },
